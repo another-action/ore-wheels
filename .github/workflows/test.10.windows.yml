@@ -7,12 +7,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - arch: x86
-            platform: Win32
-            boost-lib: 32
-          #- arch: AMD64
-          #  platform: x64
-          #  boost-lib: 64
+          #- arch: x86
+          #  platform: Win32
+          #  boost-lib: 32
+          - arch: AMD64
+            platform: x64
+            boost-lib: 64
     steps:
     - uses: actions/checkout@v4
     - name: uninstall SWIG 4.1.1
@@ -88,7 +88,7 @@ jobs:
         ORE_DIR: C:\local\ore
         ORE_STATIC_RUNTIME: 1
         ORE_USE_ZLIB: 1
-        CIBW_SKIP: cp36-* cp37-*
+        CIBW_SKIP: cp36-* cp310-* cp39-* cp311-*
         #CIBW_BUILD: cp37-win_amd64
         #CIBW_BUILD: cp38-win32
         #CIBW_BUILD: cp310-* cp39-* cp311-*
